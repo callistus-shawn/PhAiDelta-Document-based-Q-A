@@ -1,6 +1,6 @@
-# 🗂️ Project Files Description
+### 🗂️ Project Files Description
 
-## 📁 `fileapi/` – Main FastAPI Application
+### 📁 `fileapi/` – Main FastAPI Application
 
 | File         | Description |
 |--------------|-------------|
@@ -12,7 +12,7 @@
 
 ---
 
-## 📁 `fileapi/helper/` – Utility Modules
+### 📁 `fileapi/helper/` – Utility Modules
 
 | File       | Description |
 |------------|-------------|
@@ -21,7 +21,7 @@
 
 ---
 
-## 📁 `fileapi/rag/` – RAG Logic (Retrieval-Augmented Generation)
+### 📁 `fileapi/rag/` – RAG Logic (Retrieval-Augmented Generation)
 
 | File           | Description |
 |----------------|-------------|
