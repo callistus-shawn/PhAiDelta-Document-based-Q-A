@@ -28,6 +28,3 @@
 | `function.py`  | **Core RAG engine**: Handles embedding of text using Sentence Transformers, stores embeddings into the vector DB, retrieves top-k relevant chunks for a query, and communicates with the LLM for generating final answers. Integrates logic from both `upload.py` and `question.py`. |
 
 ---
-
-# 🧠 Workflow Summary – File Relationships
-
