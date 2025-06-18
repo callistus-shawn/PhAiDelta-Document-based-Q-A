@@ -1,6 +1,6 @@
 # Document based Q&A System
-* This project is a Retrieval-Augmented Generation (RAG) web application built using *FastAPI*. It allows users to upload documents (such as PDFs or text files), which are then chunked, embedded using Sentence Transformers, and stored in a vector database for efficient semantic search. 
-* When a user submits a question, using Langchain, the system retrieves the most relevant text chunks from the uploaded documents using similarity search and sends them to a Large Language Model (LLM) (e.g., OpenAI or Gemini) to generate context-aware answers.
+* This project is a Retrieval-Augmented Generation (RAG) web application built using **FastAPI**. It allows users to upload documents (such as PDFs or text files), which are then chunked, embedded using **Sentence Transformers**, and stored in a vector database for efficient semantic search. 
+* When a user submits a question, using **Langchain**, the system retrieves the most relevant text chunks from the uploaded documents using similarity search and sends them to a Large Language Model (LLM) (e.g., OpenAI or Gemini) to generate context-aware answers.
 
 ### 🗂️ Project Files Description
 
