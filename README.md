@@ -2,12 +2,6 @@
 * This project is a Retrieval-Augmented Generation (RAG) web application built using FastAPI. It allows users to upload documents (such as PDFs or text files), which are then chunked, embedded using Sentence Transformers, and stored in a vector database for efficient semantic search. 
 * When a user submits a question, using Langhchain, the system retrieves the most relevant text chunks from the uploaded documents using similarity search and sends them to a Large Language Model (LLM) (e.g., OpenAI or Gemini) to generate context-aware answers.
 
-
-# Image Style Transfer using CycleGANs
-Image style transfer involves modifying an image to adopt the visual style of another image while preserving its original content. CycleGAN (Cycle-Consistent Generative Adversarial Network) enables this transformation without requiring paired training examples. 
-* It uses two GANs, each consisting of a generator and a discriminator, to translate images between two domains. 
-* The key innovation is cycle consistency, where an image translated to the other domain and then back should closely resemble the original, ensuring content preservation. The model is trained using both cycle consistency loss and adversarial loss, achieving high-quality style transfer.
-  
 ### 🗂️ Project Files Description
 
 ### 📁 `fileapi/` – Main FastAPI Application
