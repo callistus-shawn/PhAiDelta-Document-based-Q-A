@@ -1,53 +1,33 @@
-## 🗂️ Project Files Description
+# 🗂️ Project Files Description
 
-### 📁 `fileapi/` – Main FastAPI Application
+## 📁 `fileapi/` – Main FastAPI Application
 
-| File | Description |
-|------|-------------|
-| `app.py` | Initializes the FastAPI app, mounts static files, and includes API routers. Sets up the main application context. |
-| `main.py` | Entry point when starting the FastAPI server. Imports `app` from `app.py` and runs with Uvicorn. |
-| `route.py` | Central routing module where endpoints are declared (e.g., for upload, ask). Uses FastAPI's `APIRouter`. |
-| `model.py` | Defines Pydantic data models for request and response validation (e.g., for handling input questions). |
-| `upload.py` | Handles file upload logic, including saving files, validating formats, and triggering embedding processes. |
-| `question.py` | Accepts a user query, retrieves relevant chunks, and sends them to the LLM for response generation. |
+| File         | Description |
+|--------------|-------------|
+| `app.py`     | Initializes the FastAPI app, mounts static files, and includes API routers. Sets up the main application context. |
+| `main.py`    | Entry point for starting the FastAPI server. Imports the `app` instance from `app.py` and runs with Uvicorn. |
+| `route.py`   | Central routing module where all API endpoints are declared (e.g., file upload, query handling). Uses FastAPI's `APIRouter`. |
+| `model.py`   | Defines Pydantic data models used for request/response validation (e.g., handling input questions and file metadata). |
+
 
 ---
 
-### 📁 `fileapi/helper/` – Utility Modules
+## 📁 `fileapi/helper/` – Utility Modules
 
-| File | Description |
-|------|-------------|
-
-| `chunk.py` | Logic for breaking large documents into smaller overlapping text chunks (important for embedding and retrieval). |
-
-| `db.py` | Manages vector store: saving/loading embeddings, performing similarity search. |
+| File       | Description |
+|------------|-------------|
+| `chunk.py` | Breaks large documents into smaller overlapping text chunks, which are critical for effective embedding and retrieval. |
+| `db.py`    | Handles operations on the vector store: saving/loading embeddings, and performing similarity search based on embeddings. |
 
 ---
 
-### 📁 `fileapi/rag/` – RAG Logic (Retrieval-Augmented Generation)
+## 📁 `fileapi/rag/` – RAG Logic (Retrieval-Augmented Generation)
 
-| File | Description |
-|------|-------------|
-| `function.py` | **Core module**: handles embedding of text using a sentence-transformer model, stores embeddings. 
-Handles file upload logic, including saving files, validating formats, and triggering embedding processes. and retrieves the top-k relevant chunks for a given query. 
-Accepts a user query, retrieves relevant chunks, and sends them to the LLM for response generation. This is the RAG engine. |
+| File           | Description |
+|----------------|-------------|
+| `function.py`  | **Core RAG engine**: Handles embedding of text using Sentence Transformers, stores embeddings into the vector DB, retrieves top-k relevant chunks for a query, and communicates with the LLM for generating final answers. Integrates logic from both `upload.py` and `question.py`. |
 
 ---
 
+# 🧠 Workflow Summary – File Relationships
 
-### 🧠 Workflow Summary (File Relationships)
-
-```text
-User Uploads File
-     ↓
-upload.py → chunk.py → function.py → db.py
-     ↓
-Embeddings stored
-     
-User Asks Question
-     ↓
-question.py
-     ↓
-LLM (e.g., OpenAI)
-     ↓
-Returns Answer
