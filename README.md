@@ -1,3 +1,5 @@
+### This project is a Retrieval-Augmented Generation (RAG) web application built using FastAPI. It allows users to upload documents (such as PDFs or text files), which are then chunked, embedded using Sentence Transformers, and stored in a vector database for efficient semantic search. When a user submits a question, the system retrieves the most relevant text chunks from the uploaded documents using similarity search and sends them to a Large Language Model (LLM) (e.g., OpenAI or Gemini) to generate context-aware answers. The architecture is modular, with clear separation of concerns across routing, embedding, querying, and utility modules. Key tools and libraries used include FastAPI (web framework), Pydantic (for data validation), SentenceTransformers (for generating embeddings), FAISS or similar vector DBs (for similarity search), and Uvicorn (ASGI server). The design ensures scalability, fast response times, and adaptability for various document-question answering use cases.
+
 ### 🗂️ Project Files Description
 
 ### 📁 `fileapi/` – Main FastAPI Application
