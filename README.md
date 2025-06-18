@@ -19,6 +19,7 @@
 |------|-------------|
 
 | `chunk.py` | Logic for breaking large documents into smaller overlapping text chunks (important for embedding and retrieval). |
+
 | `db.py` | Manages vector store: saving/loading embeddings, performing similarity search. |
 
 ---
@@ -27,7 +28,9 @@
 
 | File | Description |
 |------|-------------|
-| `function.py` | **Core module**: handles embedding of text using a sentence-transformer model, stores embeddings in FAISS, and retrieves the top-k relevant chunks for a given query. This is the RAG engine. |
+| `function.py` | **Core module**: handles embedding of text using a sentence-transformer model, stores embeddings. 
+Handles file upload logic, including saving files, validating formats, and triggering embedding processes. and retrieves the top-k relevant chunks for a given query. 
+Accepts a user query, retrieves relevant chunks, and sends them to the LLM for response generation. This is the RAG engine. |
 
 ---
 
@@ -40,9 +43,11 @@ User Uploads File
 upload.py → chunk.py → function.py → db.py
      ↓
 Embeddings stored
-
+     
 User Asks Question
      ↓
-question.py → function.py → db.py → LLM (e.g., OpenAI)
+question.py
+     ↓
+LLM (e.g., OpenAI)
      ↓
 Returns Answer
